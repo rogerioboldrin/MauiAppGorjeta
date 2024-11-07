@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppGorjeta.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="gorjeta.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Pessoas em um restaurante" />
+
+            <Grid ColumnDefinitions="50,*" RowDefinitions="*,*" Margin="20,0,20,0">
+
+                <Label Text="R$" 
+                       FontSize="20"
+                       Grid.Column="0"
+                       Grid.Row="0"/>
+                <Entry 
+                       x:Name="entValorConta"
+                       Grid.Column="1"
+                       Grid.Row="0"
+                       Keyboard="Numeric"
+                       Placeholder="Informe o total da compra:"/>
+
+
+                <Label Text="%" 
+                       FontSize="20"
+                       Grid.Column="0"
+                       Grid.Row="1"/>
+                <Entry 
+                       x:Name="entPerGorjeta"
+                       Grid.Column="1" 
+                       Grid.Row="1"
+                       Keyboard="Numeric"
+                       Placeholder="Informe o percentual da gorjeta:"/>
+            </Grid>
+
+
+            <Button
+                x:Name="btnCalcular"
+                Text="Calcular" 
+                SemanticProperties.Hint="Realiza o cálculo da gorjeta e o valor final do pagamento"
+                Clicked="btnCalcular_Clicked"
+                HorizontalOptions="CenterAndExpand"/>
+
+            <VerticalStackLayout
+                x:Name="vslResultado"
+                Padding="10"
+                Spacing="10">
+
+                <Label Text="Total da conta" 
+                       TextColor="White" 
+                       FontSize="20"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+
+                <Label x:Name="lbValorGorjeta"
+                Text="R$0,00"
+                       TextColor="White" 
+                       FontSize="20" 
+                       VerticalTextAlignment="Center" 
+                       HorizontalTextAlignment="Center"/>
+
+                <Label Text="Valor total com a gorjeta:" 
+                       TextColor="blue" 
+                       FontSize="20"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+
+                <Label x:Name="lbValorTotal"
+                       Text="R$0,00 "
+                       SemanticProperties.Description="Valor total da compra com a gorjeta"
+                       FontSize="18"
+                       TextColor="Blue"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="CenterAndExpand"/>
+
+                <Label Text="Volte Sempre!" 
+                       TextColor="White" 
+                       FontSize="15" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"/>
+
+
+
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
